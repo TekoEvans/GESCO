@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="51f8fcbd-9e6f-4975-86d0-8383cf0a0c9f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT Students.last_name, Students.first_name ,
+Students.birth_date,Students.photo,Instituts.libele,
+Careers.career_name,Students.Anne_acc, Students.level , 
+Instituts.name_headmaster 
+FROM Students 
+JOIN Instituts 
+ON id_institut= Instituts.id 
+JOIN Careers 
+ON Students.id_career=Careers.id 
+WHERE Students.id= 1;]]>
+	</queryString>
+	<field name="last_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="first_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="birth_date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="photo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="career_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Anne_acc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="level" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name_headmaster" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="libele" class="java.lang.String"/>
+	<title>
+		<band height="76" splitType="Stretch">
+			<image>
+				<reportElement x="5" y="4" width="88" height="72" uuid="7611db17-4f5b-42f6-9839-a6b01fc3f3c7"/>
+				<imageExpression><![CDATA["/home/evans/Documents/MesCodeJava/projetApoo/src/Images/ucao.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="93" y="4" width="413" height="72" uuid="b45a7c7c-66af-4c2a-9f13-97151bfcec82"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Université Cathique de l'Afrique de l'Ouest Unité ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement x="120" y="0" width="361" height="41" uuid="a5d5f527-a1a7-4b4f-928a-5fb397a6b64d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="22" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[ QUITUS D'INSCRIPTION]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="68" splitType="Stretch">
+			<staticText>
+				<reportElement x="120" y="17" width="170" height="20" uuid="9c7ead01-4181-45cc-9f3a-8bc0efadc066"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Anneaccademique:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="290" y="17" width="134" height="20" uuid="1eeca17a-41d4-4302-9392-f1a32e8e74b4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Anne_acc}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="305" splitType="Stretch">
+			<staticText>
+				<reportElement x="32" y="12" width="449" height="31" uuid="c9585556-4f37-486f-a98d-9a65db3d3b1f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Le service de la scolarité atteste que l'etudiant(e);]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="43" width="521" height="31" uuid="ca830e05-2f44-4a87-a88e-268cef74f8e6"/>
+				<textElement verticalAlignment="Top">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="93" y="43" width="123" height="20" uuid="3527545b-b446-44e6-8a8a-4feeaad72859"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{last_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="43" width="240" height="20" uuid="8c0aa4f1-fcfe-4af3-a983-e8438a5ed7be"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{first_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="74" width="521" height="31" uuid="cfe4c0a4-ef7a-4091-b315-e05431afcf85"/>
+				<textElement verticalAlignment="Top">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[est reelement inscrit pour l'annee encours.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="120" width="118" height="31" uuid="41ff400a-3a75-4dbd-8eab-6bb21430d654"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="false" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Domaine:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="206" width="118" height="31" uuid="0465c3f4-2907-4b71-9636-d249187985f6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="false" isItalic="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Niveau:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="151" y="206" width="404" height="31" uuid="63143b9e-c8cc-41fa-a1f9-3edbcf14e359"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{level}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="32" y="63" width="485" height="1" uuid="96fcf3dd-8933-4947-92ca-b0b8c483eb4c"/>
+			</line>
+			<line>
+				<reportElement x="383" y="30" width="134" height="1" uuid="0554656a-1b15-4cc4-870d-5cdd2674c493"/>
+			</line>
+			<textField>
+				<reportElement x="151" y="120" width="390" height="31" uuid="d772ef26-093b-443c-8c95-1c321852acbf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{libele}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="216" y="285" width="105" height="20" uuid="13b0ed53-a078-430b-847e-e90035fcd74c"/>
+				<textElement>
+					<font size="13" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[LE DIRECTEUR:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="331" y="285" width="220" height="20" uuid="db8b0758-5798-4636-a4fd-fab8aae689bd"/>
+				<textElement>
+					<font size="13" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name_headmaster}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="162" width="118" height="31" uuid="0f8959c5-6eb8-4b65-b68a-f8602081a18c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="false" isItalic="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Spécialité:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="151" y="162" width="390" height="33" uuid="67e602e6-8519-49c6-a032-107f221b9e76"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{career_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="7" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
