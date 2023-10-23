@@ -24,4 +24,4 @@ Ce projet est une application Java qui permet de gérer et analyser les données
 1. Clonez ce référentiel sur votre machine locale en utilisant la commande suivante :
 
    ```bash
-   git clone https://github.com/votre-utilisateur/nom-du-repo.git
+   git clone  https://github.com/TekoEvans/GESCO.git
